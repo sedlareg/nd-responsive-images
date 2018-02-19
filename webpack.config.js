@@ -1,6 +1,7 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const PATHS = {
     app: path.join(__dirname, 'app'),
@@ -13,6 +14,7 @@ const htmlWebPack = new HtmlWebpackPlugin({
 });
 
 const extractCSS  = new ExtractTextPlugin('css/styles.css');
+const cleanDIst = new CleanWebpackPlugin(['dist']);
 
 module.exports = {
     context: __dirname,
@@ -24,6 +26,7 @@ module.exports = {
         path: PATHS.dist,
         filename: 'index.js'
     },
+    watch: false,
     devServer: {
         inline: true
     },
@@ -41,8 +44,8 @@ module.exports = {
                 loader: 'responsive-loader',
                 options: {
                     quality: 40,
-                    sizes: [800, 1280],
-                    name: 'images/[name].[ext]'
+                    sizes: [400, 800, 1280],
+                    name: 'images/[name]_[width].[ext]'
                     // name: 'images/[name]-[hash]-[width].[ext]'
                 }
             },
@@ -60,6 +63,7 @@ module.exports = {
         ]
     },
     plugins: [
+        cleanDIst,
         extractCSS,
         htmlWebPack
     ]

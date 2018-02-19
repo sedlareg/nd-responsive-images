@@ -16,33 +16,118 @@ I've left some boilerplate below for you.
 [class*="zocial-"]:before {
     font-family: 'zocial', sans-serif;
     margin-right: 10px;
-}
-
-.zocial {
-    text-shadow: 4px 4px 4px #aaa;
+    text-shadow: 4px 2px 4px #aaa;
     color: #333;
     display: inline-block;
-    padding: 1em;
+}
+
+div#social a {
+    margin-right: 1em;
+}
+
+div#social a:last-of-type {
+    margin: 0;
+}
+
+a:hover [class*="zocial-"]:before {
+    color: #3d85c6;
 }
 
 body {
-
+    font-family: Roboto, sans-serif;
+    font-size: 1em;
+    color: #333;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 3vh 0 3vh 0;
+    text-align: center;
 }
 
-#social a {
+a {
+    color: #4183C4;
+    font-weight: 300;
     text-decoration: none;
 }
 
+a:hover {
+    color: #3d85c6;
+    text-decoration: underline;
+}
+
 article {
-    width: 50em;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    /*width: calc(100% - 20px);*/
+    max-width: 50em;
     border-bottom: 1px solid silver;
     margin-bottom:  20px;
+    text-align: justify;
+}
+
+figcaption {
+    color: #22BB00;
+    font-family: 'Roboto condensed', sans-serif;
+    padding: 2em 0;
+    text-align: center;
+}
+
+figure {
+    margin: 1em 0 1em 0;
 }
 
 h1 {
+    color: #444;
+    font-family: 'Roboto condensed', sans-serif;
+    font-size: 6vw;
+    font-weight: 500;
+    margin: 0 0 1em 0;
+}
 
+h2 {
+    border-bottom: 1px solid #ddd;
+    color: #33BB00;
+    font-family: 'Roboto condensed', sans-serif;
+    font-size: 5vw;
+    margin: 0 0 1em 0;
+    padding: 0 0 1em 0;
 }
 
 img {
     max-width: 100%;
+    width: 100vw;
+}
+
+picture#banner > img {
+    -webkit-filter: saturate(3) opacity(0.7);
+    margin: 0 0 2em 0;
+    width: 100vw;
+}
+
+p {
+    color: #444;
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 1.6em;
+    margin: 0 auto 1em auto;
+    text-align: justify;
+}
+
+section p:last-of-type {
+    margin: 0;
+}
+
+section {
+    margin: 0 0 3vh 0;
+}
+
+section:last-of-type {
+    margin: 0 0 2em 0;
+    padding: 0 0 2em 0;
+}
+
+section#post {
+    max-width: 50em;
+    width: 90vw;
 }
